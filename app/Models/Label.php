@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Label extends Model
+{
+    protected $fillable = ['name', 'introduction'];
+
+    public function topics()
+    {
+        return $this->belongsToMany(Topic::class);
+    }
+}
