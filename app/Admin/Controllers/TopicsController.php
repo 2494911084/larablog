@@ -93,7 +93,7 @@ class TopicsController extends AdminController
         $form->multipleSelect('labels', '标签')->options(Label::all()->pluck('name', 'id'));
 
         $form->number('order', '排序');
-        $form->textarea('body', '内容');
+        $form->simditor('body', '内容');
 
         return $form;
     }

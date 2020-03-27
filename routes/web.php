@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'PagesController@root')->name('root');
+
+Route::post('/admin/api/upload', 'PagesController@apiImageUpload');
