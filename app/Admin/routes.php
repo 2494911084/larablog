@@ -16,4 +16,5 @@ Route::group([
     $router->get('api/categories', 'CategoriesController@apiIndex');
     $router->resource('labels', LabelsController::class);
     $router->resource('links', LinksController::class);
+    $router->get('setting', 'SettingsController@setting');
 });
