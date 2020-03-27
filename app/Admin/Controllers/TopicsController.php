@@ -30,11 +30,7 @@ class TopicsController extends AdminController
 
         $grid->column('id', 'ID')->sortable();
         $grid->column('title', '标题');
-        $grid->column('body', '内容')->display(function($body){
-            return \Str::limit($body, 30, '...');
-        });
         $grid->column('category.name', '分类');
-
         $grid->column('labels', '标签')->display(function ($labels) {
 
             $labels = array_map(function ($label) {
@@ -48,7 +44,9 @@ class TopicsController extends AdminController
         $grid->column('order', '排序')->sortable();
         $grid->column('created_at', '发布时间');
         $grid->column('updated_at', '更新时间');
-
+        $grid->actions(function($actions){
+            $actions->disableView();
+        });
         return $grid;
     }
 
