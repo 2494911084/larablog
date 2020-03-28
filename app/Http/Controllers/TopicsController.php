@@ -10,10 +10,15 @@ use App\Models\Link;
 
 class TopicsController extends Controller
 {
-    public function index()
+    public function index(Request $request, Topic $topic)
     {
+        if ($name = $request->topic_name) {
+            $query = $topic->query()->where('title', 'like', "%$name%");
+        } else {
+            $query = $topic->query();
+        }
         // Topics 列表
-        $topics = Topic::orderBy('order', 'desc')->orderBy('updated_at', 'desc')->get();
+        $topics = $query->orderBy('order', 'desc')->orderBy('updated_at', 'desc')->get();
         // 标签
         $labels = Label::with('topics')->get();
         // 友链
