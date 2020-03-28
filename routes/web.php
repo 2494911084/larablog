@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', 'PagesController@root')->name('root');
+// Route::get('/', 'PagesController@root')->name('root');
 
 Route::post('/admin/api/upload', 'PagesController@apiImageUpload');
+
+Route::get('/', 'TopicsController@index')->name('topics.index');
+
+Route::get('labels/{label}', 'LabelsController@show')->name('labels.show');
+
+Route::get('categories/{category}', 'CategoriesController@show')->name('categories.show');

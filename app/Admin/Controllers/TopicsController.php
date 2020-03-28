@@ -30,6 +30,7 @@ class TopicsController extends AdminController
 
         $grid->column('id', 'ID')->sortable();
         $grid->column('title', '标题');
+        $grid->column('person', '来源');
         $grid->column('category.name', '分类');
         $grid->column('labels', '标签')->display(function ($labels) {
 
@@ -62,6 +63,7 @@ class TopicsController extends AdminController
 
         $show->field('id', 'ID');
         $show->field('title', '标题');
+        $show->field('person', '来源');
         $show->field('category.name', '分类');
         $show->field('order', '排序');
         $show->field('body', '内容');
@@ -80,14 +82,9 @@ class TopicsController extends AdminController
 
         $form->text('title', '标题')->rules('required');
 
-        $form->select('category_id', '分类')->options('/admin/api/categories');
-        // $form->select('category_id', '分类')->options(function ($id) {
-        //     $category = Category::find($id);
+        $form->text('person', '来源')->rules('required');
 
-        //     if ($category) {
-        //         return [$category->id => $category->name];
-        //     }
-        // })->ajax('/admin/api/categories')->rules('required');
+        $form->select('category_id', '分类')->options('/admin/api/categories');
 
         $form->multipleSelect('labels', '标签')->options(Label::all()->pluck('name', 'id'))->rules('required');
 
