@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\link;
+use App\Models\Link;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -24,7 +24,7 @@ class LinksController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new link());
+        $grid = new Grid(new Link());
 
         $grid->column('id', 'ID')->sortable();
         $grid->column('name', '名称');
@@ -43,7 +43,7 @@ class LinksController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(link::findOrFail($id));
+        $show = new Show(Link::findOrFail($id));
 
         $show->field('id', 'ID');
         $show->field('name', '名称');
@@ -61,7 +61,7 @@ class LinksController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new link());
+        $form = new Form(new Link());
 
         $form->text('name', '名称');
         $form->url('url', 'URL');

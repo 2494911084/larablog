@@ -10953,11 +10953,6 @@ a.text-dark:focus {
   box-sizing: border-box;
 }
 
-.simditor-body a,
-.topics-show-page a {
-  text-decoration: none;
-}
-
 .simditor-body a:hover,
 .simditor-body a:focus,
 .simditor-body a:active,
