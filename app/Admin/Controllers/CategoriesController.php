@@ -68,8 +68,8 @@ class CategoriesController extends AdminController
     {
         $form = new Form(new Category());
 
-        $form->text('name', '名称');
-        $form->number('order', '排序');
+        $form->text('name', '名称')->rules('required');
+        $form->number('order', '排序')->default(0);
         $form->textarea('introduction', '介绍');
 
         return $form;
@@ -78,8 +78,9 @@ class CategoriesController extends AdminController
     // 博文分类 Api
     public function apiIndex(Request $request)
     {
-        $q = $request->get('q');
+        // $q = $request->get('q');
 
-        return Category::where('name', 'like', "%$q%")->paginate(null, ['id', 'name as text']);
+        // return Category::where('name', 'like', "%$q%")->paginate(null, ['id', 'name as text']);
+        return Category::select('id', 'name as text')->get();
     }
 }

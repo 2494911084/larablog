@@ -78,19 +78,20 @@ class TopicsController extends AdminController
     {
         $form = new Form(new Topic());
 
-        $form->text('title', '标题');
+        $form->text('title', '标题')->rules('required');
 
-        $form->select('category_id', '分类')->options(function ($id) {
-            $category = Category::find($id);
+        $form->select('category_id', '分类')->options('/admin/api/categories');
+        // $form->select('category_id', '分类')->options(function ($id) {
+        //     $category = Category::find($id);
 
-            if ($category) {
-                return [$category->id => $category->name];
-            }
-        })->ajax('/admin/api/categories');
+        //     if ($category) {
+        //         return [$category->id => $category->name];
+        //     }
+        // })->ajax('/admin/api/categories')->rules('required');
 
-        $form->multipleSelect('labels', '标签')->options(Label::all()->pluck('name', 'id'));
+        $form->multipleSelect('labels', '标签')->options(Label::all()->pluck('name', 'id'))->rules('required');
 
-        $form->number('order', '排序');
+        $form->number('order', '排序')->default(0);
         $form->simditor('body', '内容');
 
         return $form;

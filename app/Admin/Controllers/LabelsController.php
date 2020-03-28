@@ -65,7 +65,7 @@ class LabelsController extends AdminController
     {
         $form = new Form(new Label());
 
-        $form->text('name', '名称');
+        $form->text('name', '名称')->rules('required');
         $form->textarea('introduction', '介绍');
 
         return $form;
