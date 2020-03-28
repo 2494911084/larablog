@@ -1,4 +1,4 @@
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm shadow mb-3 bg-white rounded app-header">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm shadow mb-3 bg-white rounded">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ getSetting('name')?:config('app.name', 'Laravel') }}

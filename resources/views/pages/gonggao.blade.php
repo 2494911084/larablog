@@ -3,7 +3,7 @@
         <h5 class="text-secondary text-center">公告</h5>
         <hr>
         <small>
-            {{ $notice }}
+            {{ getSetting('notice')?:'暂无公告!' }}
         </small>
     </div>
 </div>

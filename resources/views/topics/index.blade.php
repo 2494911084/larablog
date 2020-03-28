@@ -7,9 +7,9 @@
             @foreach ($topics as $topic)
           <li class="media">
             <div class="media-body">
-              <h2 class="mt-0 mb-1"><a href="" style="color:#343a40;">{{ $topic->title }}</a></h2>
+              <h2 class="mt-0 mb-1"><a href="{{ route('topics.show', $topic->id) }}" style="color:#343a40;">{{ $topic->title }}</a></h2>
               <p class="text-secondary">
-                <a href="" class="text-secondary">{{ $topic->person }}</a>
+                <span class="text-secondary">{{ $topic->person }}</span>
                                                  →
                 update:{{ $topic->updated_at->diffForHumans() }}
               </p>

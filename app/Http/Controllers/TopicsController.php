@@ -14,12 +14,19 @@ class TopicsController extends Controller
     {
         // Topics 列表
         $topics = Topic::orderBy('order', 'desc')->orderBy('updated_at', 'desc')->get();
-        // 公告
-        $notice = Redis::hGet('admin_side_set', 'notice');
         // 标签
         $labels = Label::with('topics')->get();
         // 友链
         $links = Link::all();
-        return view('topics.index', compact('topics', 'notice', 'labels', 'links'));
+        return view('topics.index', compact('topics', 'labels', 'links'));
+    }
+
+    public function show(Topic $topic)
+    {
+        // 标签
+        $labels = Label::with('topics')->get();
+        // 友链
+        $links = Link::all();
+        return view('topics.show', compact('topic', 'labels', 'links'));
     }
 }
