@@ -12,26 +12,41 @@ class TopicsController extends Controller
 {
     public function index(Request $request, Topic $topic)
     {
-        if ($name = $request->topic_name) {
+        if ($name = $request->input('topic_name')) {
             $query = $topic->query()->where('title', 'like', "%$name%");
         } else {
             $query = $topic->query();
         }
-        // Topics 列表
+
         $topics = $query->orderBy('order', 'desc')->orderBy('updated_at', 'desc')->get();
+
         // 标签
-        $labels = Label::with('topics')->get();
+        $labels = $this->getLabels();
         // 友链
-        $links = Link::all();
+        $links = $this->getLinks();
+
         return view('topics.index', compact('topics', 'labels', 'links'));
     }
 
     public function show(Topic $topic)
     {
         // 标签
-        $labels = Label::with('topics')->get();
+        $labels = $this->getLabels();
         // 友链
-        $links = Link::all();
+        $links = $this->getLinks();
+
         return view('topics.show', compact('topic', 'labels', 'links'));
+    }
+
+    // 获取标签
+    public function getLabels()
+    {
+        return Label::with('topics')->get();
+    }
+
+    // 获取友链
+    public function getLinks()
+    {
+        return Link::all();
     }
 }

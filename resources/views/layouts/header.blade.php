@@ -22,8 +22,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <form href="{{ route('topics.index') }}" class="form-inline my-2 my-lg-0">
-                          <input class="form-control mr-sm-2" name="topic_name" type="search" placeholder="Search" aria-label="Search">
+                        <form action="{{ Route('topics.index') }}" method="get" class="form-inline my-2 my-lg-0">
+
+                          <input class="form-control mr-sm-2" autocomplete="off" name="topic_name" type="search" placeholder="Search" aria-label="Search">
                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
                         </form>
                     </ul>
