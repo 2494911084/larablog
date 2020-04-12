@@ -7,7 +7,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.simditor-body, .topics-show-page {
+.simditor-body, .topics-show-page>.container {
 
   pre[class*=language-] {
     margin: 1.2em 0 !important;
