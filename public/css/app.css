@@ -10883,20 +10883,20 @@ a.text-dark:focus {
 }
 
 .simditor-body pre[class*=language-],
-.topics-show-page > .container pre[class*=language-] {
+.topics-show-page pre[class*=language-] {
   margin: 1.2em 0 !important;
 }
 
 .simditor-body code,
 .simditor-body pre,
-.topics-show-page > .container code,
-.topics-show-page > .container pre {
+.topics-show-page code,
+.topics-show-page pre {
   font-family: monaco, Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1em;
 }
 
 .simditor-body code,
-.topics-show-page > .container code {
+.topics-show-page code {
   background: rgba(90, 87, 87, 0);
   margin: 5px;
   color: white;
@@ -10911,14 +10911,14 @@ a.text-dark:focus {
 
 .simditor-body code:before,
 .simditor-body code:after,
-.topics-show-page > .container code:before,
-.topics-show-page > .container code:after {
+.topics-show-page code:before,
+.topics-show-page code:after {
   letter-spacing: -0.2em;
   content: "\A0";
 }
 
 .simditor-body pre > code,
-.topics-show-page > .container pre > code {
+.topics-show-page pre > code {
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -10928,14 +10928,14 @@ a.text-dark:focus {
 }
 
 .simditor-body .highlight,
-.topics-show-page > .container .highlight {
+.topics-show-page .highlight {
   margin-bottom: 16px;
 }
 
 .simditor-body .highlight pre,
 .simditor-body pre,
-.topics-show-page > .container .highlight pre,
-.topics-show-page > .container pre {
+.topics-show-page .highlight pre,
+.topics-show-page pre {
   padding: 14px;
   overflow: auto;
   line-height: 1.45;
@@ -10946,17 +10946,17 @@ a.text-dark:focus {
 }
 
 .simditor-body .highlight pre,
-.topics-show-page > .container .highlight pre {
+.topics-show-page .highlight pre {
   margin-bottom: 0;
 }
 
 .simditor-body pre,
-.topics-show-page > .container pre {
+.topics-show-page pre {
   word-wrap: normal;
 }
 
 .simditor-body pre code,
-.topics-show-page > .container pre code {
+.topics-show-page pre code {
   display: block;
   padding: 0;
   margin: 0;
@@ -10969,8 +10969,8 @@ a.text-dark:focus {
 
 .simditor-body pre code:before,
 .simditor-body pre code:after,
-.topics-show-page > .container pre code:before,
-.topics-show-page > .container pre code:after {
+.topics-show-page pre code:before,
+.topics-show-page pre code:after {
   content: normal;
 }
 
